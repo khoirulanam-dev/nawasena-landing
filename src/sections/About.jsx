@@ -45,7 +45,7 @@ const About = () => {
 
           {/* Kanan: Teks Penjelasan */}
           {/* PERBAIKAN: Tambah mt-8 lg:mt-0 untuk memaksa jarak aman antara gambar dan teks di HP */}
-          <div className="mt-24 lg:mt-0">
+          <div className="mt-20 lg:mt-0">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-[2px] bg-nawasena-light"></span>
               <p className="text-nawasena-light font-bold tracking-[0.15em] uppercase text-sm">
