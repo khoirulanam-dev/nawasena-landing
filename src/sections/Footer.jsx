@@ -126,17 +126,11 @@ const Footer = () => {
             <div className="w-full h-48 rounded-lg overflow-hidden border border-gray-600 shadow-lg bg-gray-200">
               {/* Embed Google Maps Ijen/Bondowoso (Anda bisa mengganti src dengan embed link kantor asli) */}
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.1110930348973!2d113.70602817682766!3d-8.191562982148763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd69685eb8223c5%3A0xd8d8a380433d8789!2sKebonsari%20Residence!5e0!3m2!1sid!2sid!4v1776503824612!5m2!1sid!2sid"
-                width="600"
-                height="450"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.123848973126!2d113.70602817582982!3d-8.1915929314013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd696a5d35a58e3%3A0xe32dd78913e86c0e!2sKebonsari%20Residence!5e0!3m2!1sid!2sid!4v1776503824512!5m2!1sid!2sid"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen=""
+                allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>

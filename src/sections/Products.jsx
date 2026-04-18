@@ -88,10 +88,6 @@ const Products = () => {
                   src={product.img}
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  onError={(e) => {
-                    e.target.src =
-                      "https://via.placeholder.com/600x400?text=Kopi+Nawasena";
-                  }} // Fallback jika gambar belum ada
                 />
 
                 {/* Overlay Gelap saat di-hover */}
