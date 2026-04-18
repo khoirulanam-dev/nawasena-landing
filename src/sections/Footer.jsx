@@ -38,7 +38,7 @@ const Footer = () => {
                   href="mailto:info@nawasena.com"
                   className="hover:text-white transition-colors"
                 >
-                  export@nawasenaint.my.id
+                  export@nawasenaint.web.id
                 </a>{" "}
                 {/* Ganti dengan email asli */}
               </li>

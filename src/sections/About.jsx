@@ -13,7 +13,7 @@ const About = () => {
             <div className="rounded-3xl overflow-hidden shadow-lg h-full">
               {/* Ganti "kopi-1.jpg" dengan nama foto asli Anda di folder public/images */}
               <img
-                src="/images/kopi-1.jpeg"
+                src="/images/about1.jpeg"
                 alt="Coffee"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -26,16 +26,16 @@ const About = () => {
                   className="text-4xl md:text-5xl font-bold mb-1"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
-                  25+
+                  250+
                 </h3>
                 <p className="font-medium text-xs tracking-widest uppercase">
-                  Regions
+                  Partner Farmers
                 </p>
               </div>
               <div className="rounded-3xl overflow-hidden shadow-lg h-1/2">
                 {/* Ganti "petani.jpg" dengan foto asli Anda */}
                 <img
-                  src="/images/petani.jpg"
+                  src="/images/about2.jpeg"
                   alt="Farmers"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -55,14 +55,20 @@ const About = () => {
               className="text-4xl md:text-5xl font-bold text-nawasena-dark mb-6 leading-snug"
               style={{ fontFamily: "'Playfair Display', serif" }}
             >
-              Bringing the World the Best of Indonesian Coffee
+              Delivering Indonesia’s Finest Arabica Coffee to Global Markets
             </h2>
             <p className="text-gray-600 mb-8 leading-relaxed">
-              At PT. Nawasena International Group, we are passionate about
-              sharing Indonesia's rich coffee heritage with the world. As a
-              leading exporter of premium green coffee beans, we connect global
-              roasters and coffee lovers to the unique flavors cultivated from
-              our diverse archipelago.
+              At Nawasena International Group, we are committed to bringing the
+              best of Indonesian coffee to both domestic and international
+              markets. As a growing green coffee exporter, we focus on premium
+              Arabica beans with specialty-grade potential, sourced directly
+              from trusted origins across Indonesia. We work closely with
+              farmers and local partners to ensure every lot is handled with
+              care—from harvesting to post-processing—maintaining quality
+              consistency, traceability, and transparency throughout the supply
+              chain. Our approach is simple: deliver coffee that is not only
+              high in quality, but also reliable for long-term business
+              relationships.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-8">
@@ -73,7 +79,9 @@ const About = () => {
                     Sustainable
                   </h4>
                   <p className="text-sm text-gray-500">
-                    Ethically sourced directly from local farmers.
+                    We collaborate directly with farmers <br></br> and origin
+                    partners to ensure ethical <br></br> sourcing, better
+                    quality control, and a more transparent supply chain.
                   </p>
                 </div>
               </div>
@@ -81,10 +89,10 @@ const About = () => {
                 <FaMedal className="text-nawasena-light text-2xl shrink-0" />
                 <div>
                   <h4 className="font-bold text-nawasena-dark mb-1">
-                    Premium Quality
+                    Premium Quality Green Beans
                   </h4>
                   <p className="text-sm text-gray-500">
-                    Meticulously graded to global standards.
+                    delivering clean, consistent, and reliable cup profiles.
                   </p>
                 </div>
               </div>
@@ -102,15 +110,19 @@ const About = () => {
               Why Global Roasters Choose Nawasena
             </h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              Our deep connections to Indonesia's coffee-growing regions allow
-              us to offer an unparalleled selection of green beans. We are your
-              dedicated partner in quality and reliability.
+              We are more than just a coffee supplier—we are a partner focused
+              on delivering consistent quality and dependable supply. With
+              strong connections to key coffee-producing regions in Indonesia,
+              we provide carefully selected green coffee beans tailored to meet
+              market expectations. Our goal is to help roasters, importers, and
+              distributors secure coffee that performs well not only in cupping,
+              but also in business continuity.
             </p>
             <ul className="space-y-4 mb-8">
               {[
-                "Directly Sourced from Top Farms",
-                "Consistent Quality & Grading",
-                "Reliable & Efficient Global Shipping",
+                "Directly Sourced from Trusted Origins",
+                "Consistent Quality Control",
+                "Reliable & Efficient Export Handling",
               ].map((item, i) => (
                 <li
                   key={i}
@@ -125,7 +137,7 @@ const About = () => {
           <div className="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl relative h-64 md:h-80 group">
             {/* Ganti "pabrik.jpg" dengan foto asli Anda */}
             <img
-              src="/images/kopi-1.jpeg"
+              src="/images/toraja.jpeg"
               alt="Processing"
               className="w-full h-full object-cover"
             />
