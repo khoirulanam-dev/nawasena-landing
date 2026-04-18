@@ -40,14 +40,14 @@ const Products = () => {
     },
     {
       id: 5,
-      name: "Single Origin Java Natural Anaerob Specialty",
+      name: "Single Variety Java Natural Anaerob Specialty",
       origin: "Java Ijen",
       desc: "It is a single variety micro-lot from Java Ijen which is processed using natural anaerobic methods to produce a more specific, clean and defined taste character. The profile tends to be complex with more directional fruity notes. Suitable for roastery specialties that prioritize traceability, uniqueness of variety and product exclusivity.",
       img: "/images/Java-Natural-Anaerob.jpeg",
     },
     {
       id: 6,
-      name: "Single Origin Orange Bourbon Natural Anaerob Specialty",
+      name: "Single Variety Orange Bourbon Natural Anaerob Specialty",
       origin: "Java Ijen",
       desc: "Orange Bourbon varieties with natural anaerobic processes produce very complex flavor profiles, intense fruity, and high sweetness. The unique character of this variety provides a different cup experience with a sharper and more distinctive aroma. Aimed at the premium and specialty segments looking for high-end coffee with unique character and high exclusive value.",
       img: "/images/orange-bourbon.jpeg",

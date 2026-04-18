@@ -6,12 +6,13 @@ const About = () => {
     <section id="about" className="py-24 bg-nawasena-bg">
       <div className="container mx-auto px-8 md:px-16 max-w-7xl">
         {/* === BLOK ATAS: Grid Asimetris & Teks === */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
-          {/* Kiri: Grid Asimetris (Lebih Modern & Dinamis) */}
-          <div className="grid grid-cols-2 gap-4 h-[400px]">
+        {/* PERBAIKAN: Ubah items-center menjadi items-start lg:items-center agar di HP tidak tabrakan */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-center mb-24">
+          {/* Kiri: Grid Asimetris */}
+          {/* PERBAIKAN: Tinggi dinamis h-[350px] di HP, h-[450px] di PC agar lebih proporsional */}
+          <div className="grid grid-cols-2 gap-4 h-[350px] md:h-[450px] w-full">
             {/* Gambar Kiri (Tinggi penuh) */}
             <div className="rounded-3xl overflow-hidden shadow-lg h-full">
-              {/* Ganti "kopi-1.jpg" dengan nama foto asli Anda di folder public/images */}
               <img
                 src="/images/about1.jpeg"
                 alt="Coffee"
@@ -19,21 +20,20 @@ const About = () => {
               />
             </div>
 
-            {/* Kolom Kanan (Bagi 2: Atas Kotak Angka, Bawah Gambar) */}
+            {/* Kolom Kanan (Bagi 2) */}
             <div className="flex flex-col gap-4 h-full">
-              <div className="bg-nawasena-light text-white rounded-3xl p-6 h-1/2 flex flex-col justify-center items-center text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+              <div className="bg-nawasena-light text-white rounded-3xl p-4 md:p-6 h-1/2 flex flex-col justify-center items-center text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
                 <h3
-                  className="text-4xl md:text-5xl font-bold mb-1"
+                  className="text-3xl md:text-5xl font-bold mb-1"
                   style={{ fontFamily: "'Playfair Display', serif" }}
                 >
                   250+
                 </h3>
-                <p className="font-medium text-xs tracking-widest uppercase">
+                <p className="font-medium text-[10px] md:text-xs tracking-widest uppercase">
                   Partner Farmers
                 </p>
               </div>
               <div className="rounded-3xl overflow-hidden shadow-lg h-1/2">
-                {/* Ganti "petani.jpg" dengan foto asli Anda */}
                 <img
                   src="/images/about2.jpeg"
                   alt="Farmers"
@@ -44,7 +44,8 @@ const About = () => {
           </div>
 
           {/* Kanan: Teks Penjelasan */}
-          <div>
+          {/* PERBAIKAN: Tambah mt-8 lg:mt-0 untuk memaksa jarak aman antara gambar dan teks di HP */}
+          <div className="mt-24 lg:mt-0">
             <div className="flex items-center gap-3 mb-4">
               <span className="w-8 h-[2px] bg-nawasena-light"></span>
               <p className="text-nawasena-light font-bold tracking-[0.15em] uppercase text-sm">
@@ -80,8 +81,8 @@ const About = () => {
                   </h4>
                   <p className="text-sm text-gray-500">
                     We collaborate directly with farmers <br></br> and origin
-                    partners to ensure ethical <br></br> sourcing, better
-                    quality control, and a more transparent supply chain.
+                    partners to ensure ethical sourcing, better quality control,{" "}
+                    <br></br> and a more transparent supply chain.
                   </p>
                 </div>
               </div>
@@ -92,7 +93,7 @@ const About = () => {
                     Premium Quality Green Beans
                   </h4>
                   <p className="text-sm text-gray-500">
-                    delivering clean, consistent, and reliable cup profiles.
+                    Delivering clean, consistent, and reliable cup profiles.
                   </p>
                 </div>
               </div>
@@ -101,8 +102,8 @@ const About = () => {
         </div>
 
         {/* === BLOK BAWAH: Why Us & Video/Gambar Gudang === */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-32 bg-white rounded-[3rem] p-8 md:p-12 shadow-sm border border-gray-100">
-          <div className="order-2 lg:order-1">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start lg:items-center mt-32 bg-white rounded-[3rem] p-8 md:p-12 shadow-sm border border-gray-100">
+          <div className="order-2 lg:order-1 mt-6 lg:mt-0">
             <h2
               className="text-3xl font-bold text-nawasena-dark mb-4"
               style={{ fontFamily: "'Playfair Display', serif" }}
@@ -128,14 +129,14 @@ const About = () => {
                   key={i}
                   className="flex items-center gap-3 text-nawasena-dark font-medium"
                 >
-                  <FaCheckCircle className="text-green-600 text-lg" /> {item}
+                  <FaCheckCircle className="text-green-600 text-lg shrink-0" />
+                  <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
 
-          <div className="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl relative h-64 md:h-80 group">
-            {/* Ganti "pabrik.jpg" dengan foto asli Anda */}
+          <div className="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl relative h-64 md:h-80 w-full group">
             <img
               src="/images/toraja.jpeg"
               alt="Processing"
