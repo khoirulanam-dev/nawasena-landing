@@ -1,0 +1,139 @@
+import React from "react";
+import { FaCheckCircle, FaLeaf, FaMedal } from "react-icons/fa";
+
+const About = () => {
+  return (
+    <section id="about" className="py-24 bg-nawasena-bg">
+      <div className="container mx-auto px-8 md:px-16 max-w-7xl">
+        {/* === BLOK ATAS: Grid Asimetris & Teks === */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+          {/* Kiri: Grid Asimetris (Lebih Modern & Dinamis) */}
+          <div className="grid grid-cols-2 gap-4 h-[400px]">
+            {/* Gambar Kiri (Tinggi penuh) */}
+            <div className="rounded-3xl overflow-hidden shadow-lg h-full">
+              {/* Ganti "kopi-1.jpg" dengan nama foto asli Anda di folder public/images */}
+              <img
+                src="/images/kopi-1.jpeg"
+                alt="Coffee"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+
+            {/* Kolom Kanan (Bagi 2: Atas Kotak Angka, Bawah Gambar) */}
+            <div className="flex flex-col gap-4 h-full">
+              <div className="bg-nawasena-light text-white rounded-3xl p-6 h-1/2 flex flex-col justify-center items-center text-center shadow-lg transform hover:-translate-y-2 transition-transform duration-300">
+                <h3
+                  className="text-4xl md:text-5xl font-bold mb-1"
+                  style={{ fontFamily: "'Playfair Display', serif" }}
+                >
+                  25+
+                </h3>
+                <p className="font-medium text-xs tracking-widest uppercase">
+                  Regions
+                </p>
+              </div>
+              <div className="rounded-3xl overflow-hidden shadow-lg h-1/2">
+                {/* Ganti "petani.jpg" dengan foto asli Anda */}
+                <img
+                  src="/images/petani.jpg"
+                  alt="Farmers"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Kanan: Teks Penjelasan */}
+          <div>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-8 h-[2px] bg-nawasena-light"></span>
+              <p className="text-nawasena-light font-bold tracking-[0.15em] uppercase text-sm">
+                About Us
+              </p>
+            </div>
+            <h2
+              className="text-4xl md:text-5xl font-bold text-nawasena-dark mb-6 leading-snug"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Bringing the World the Best of Indonesian Coffee
+            </h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">
+              At PT. Nawasena International Group, we are passionate about
+              sharing Indonesia's rich coffee heritage with the world. As a
+              leading exporter of premium green coffee beans, we connect global
+              roasters and coffee lovers to the unique flavors cultivated from
+              our diverse archipelago.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-6 mb-8">
+              <div className="flex gap-4">
+                <FaLeaf className="text-nawasena-light text-2xl shrink-0" />
+                <div>
+                  <h4 className="font-bold text-nawasena-dark mb-1">
+                    Sustainable
+                  </h4>
+                  <p className="text-sm text-gray-500">
+                    Ethically sourced directly from local farmers.
+                  </p>
+                </div>
+              </div>
+              <div className="flex gap-4">
+                <FaMedal className="text-nawasena-light text-2xl shrink-0" />
+                <div>
+                  <h4 className="font-bold text-nawasena-dark mb-1">
+                    Premium Quality
+                  </h4>
+                  <p className="text-sm text-gray-500">
+                    Meticulously graded to global standards.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* === BLOK BAWAH: Why Us & Video/Gambar Gudang === */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mt-32 bg-white rounded-[3rem] p-8 md:p-12 shadow-sm border border-gray-100">
+          <div className="order-2 lg:order-1">
+            <h2
+              className="text-3xl font-bold text-nawasena-dark mb-4"
+              style={{ fontFamily: "'Playfair Display', serif" }}
+            >
+              Why Global Roasters Choose Nawasena
+            </h2>
+            <p className="text-gray-600 mb-6 leading-relaxed">
+              Our deep connections to Indonesia's coffee-growing regions allow
+              us to offer an unparalleled selection of green beans. We are your
+              dedicated partner in quality and reliability.
+            </p>
+            <ul className="space-y-4 mb-8">
+              {[
+                "Directly Sourced from Top Farms",
+                "Consistent Quality & Grading",
+                "Reliable & Efficient Global Shipping",
+              ].map((item, i) => (
+                <li
+                  key={i}
+                  className="flex items-center gap-3 text-nawasena-dark font-medium"
+                >
+                  <FaCheckCircle className="text-green-600 text-lg" /> {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl relative h-64 md:h-80 group">
+            {/* Ganti "pabrik.jpg" dengan foto asli Anda */}
+            <img
+              src="/images/kopi-1.jpeg"
+              alt="Processing"
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
