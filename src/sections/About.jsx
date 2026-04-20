@@ -62,10 +62,10 @@ const About = () => {
               At Nawasena International Group, we are committed to bringing the
               best of Indonesian coffee to both domestic and international
               markets. As a growing green coffee exporter, we focus on premium
-              Arabica beans with specialty-grade potential, sourced directly
+              Arabica beans with specialty grade potential, sourced directly
               from trusted origins across Indonesia. We work closely with
               farmers and local partners to ensure every lot is handled with
-              care—from harvesting to post-processing—maintaining quality
+              care from harvesting to post processing maintaining quality
               consistency, traceability, and transparency throughout the supply
               chain. Our approach is simple: deliver coffee that is not only
               high in quality, but also reliable for long-term business
@@ -111,9 +111,9 @@ const About = () => {
               Why Global Roasters Choose Nawasena
             </h2>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              We are more than just a coffee supplier—we are a partner focused
+              We are more than just a coffee supplier we are a partner focused
               on delivering consistent quality and dependable supply. With
-              strong connections to key coffee-producing regions in Indonesia,
+              strong connections to key coffee producing regions in Indonesia,
               we provide carefully selected green coffee beans tailored to meet
               market expectations. Our goal is to help roasters, importers, and
               distributors secure coffee that performs well not only in cupping,
