@@ -142,7 +142,7 @@ const Products = () => {
           {categories.map((category) => (
             <div
               key={category.id}
-              className="bg-[#f8f9e8] rounded-xl overflow-hidden shadow-md group"
+              className="bg-gradient-to-br from-[#f8f7ed] to-[#ece8dc] rounded-2xl max-w-7xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl scroll-smooth"
             >
               <div className="relative h-80 w-full overflow-hidden bg-gray-200">
                 <img
