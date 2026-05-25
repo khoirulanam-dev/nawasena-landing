@@ -138,7 +138,7 @@ const About = () => {
 
           <div className="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl relative h-64 md:h-80 w-full group">
             <img
-              src="/images/toraja.jpeg"
+              src="/images/gayo-wine.jpeg"
               alt="Processing"
               className="w-full h-full object-cover"
             />
