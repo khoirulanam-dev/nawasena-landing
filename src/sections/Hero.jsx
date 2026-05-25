@@ -7,7 +7,7 @@ import "swiper/css/effect-fade";
 
 const Hero = () => {
   // Ganti link URL dengan path gambar lokal di folder public/images
-  const images = ["/images/hero1.jpeg", "/images/hero2.jpeg"];
+  const images = ["/images/hero-1.jpeg", "/images/hero2.jpeg"];
 
   return (
     <section id="home" className="h-screen w-full relative">

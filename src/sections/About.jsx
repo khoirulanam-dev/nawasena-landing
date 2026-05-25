@@ -14,7 +14,7 @@ const About = () => {
             {/* Gambar Kiri (Tinggi penuh) */}
             <div className="rounded-3xl overflow-hidden shadow-lg h-full">
               <img
-                src="/images/about1.jpeg"
+                src="/images/about1.jpeg.jpeg"
                 alt="Coffee"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
@@ -138,7 +138,7 @@ const About = () => {
 
           <div className="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl relative h-64 md:h-80 w-full group">
             <img
-              src="/images/gayo-wine.jpeg"
+              src="/images/about3.jpeg"
               alt="Processing"
               className="w-full h-full object-cover"
             />
