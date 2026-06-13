@@ -10,11 +10,11 @@ const Hero = () => {
   // Ganti link URL dengan path gambar lokal di folder public/images
   const images = [
     {
-      src: "/images/hero-1.jpeg",
+      src: "/images/hero-1.webp",
       alt: "Indonesian Arabica coffee beans from Nawasena origin partners",
     },
     {
-      src: "/images/hero2.jpeg",
+      src: "/images/hero2.webp",
       alt: "Premium green coffee beans for export",
     },
   ];

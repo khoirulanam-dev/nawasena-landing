@@ -5,6 +5,7 @@ import About from "./sections/About";
 import Services from "./sections/Services";
 import Products from "./sections/Products";
 import RequestSample from "./sections/RequestSample";
+import FAQ from "./sections/FAQ";
 import Footer from "./sections/Footer";
 import FloatingAction from "./components/FloatingAction";
 import SmoothAnimations from "./components/SmoothAnimations";
@@ -19,6 +20,7 @@ function App() {
       <Services />
       <Products />
       <RequestSample />
+      <FAQ />
       <Footer />
       <FloatingAction />
     </div>

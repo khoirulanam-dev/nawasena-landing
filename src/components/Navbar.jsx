@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
 
         {/* Menu Links (Desktop) */}
-        <ul className="hidden md:flex gap-7 lg:gap-10">
+        <ul className="hidden lg:flex gap-7 xl:gap-10">
           {links.map((link) => (
             <li key={link.href}>
               <a
@@ -54,7 +54,7 @@ const Navbar = () => {
         {/* Tombol Hamburger (Mobile & Tablet) */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-nawasena-dark focus:outline-none"
+          className="lg:hidden text-nawasena-dark focus:outline-none"
         >
           {isOpen ? <FaTimes size={26} /> : <FaBars size={26} />}
         </button>
@@ -62,7 +62,7 @@ const Navbar = () => {
 
       {/* Menu Dropdown / Slide (Mobile & Tablet) */}
       <div
-        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-white/95 backdrop-blur-md flex flex-col items-center justify-center transition-transform duration-300 ease-in-out z-[105] ${
+        className={`lg:hidden fixed top-0 left-0 w-full h-screen bg-white/95 backdrop-blur-md flex flex-col items-center justify-center transition-transform duration-300 ease-in-out z-[105] ${
           isOpen ? "translate-y-0" : "-translate-y-full"
         }`}
       >

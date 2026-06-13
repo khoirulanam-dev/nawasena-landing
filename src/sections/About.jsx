@@ -14,7 +14,7 @@ const About = () => {
             {/* Gambar Kiri (Tinggi penuh) */}
             <div className="rounded-3xl overflow-hidden shadow-lg h-full">
               <img
-                src="/images/about1.jpeg.jpeg"
+                src="/images/about-main.webp"
                 alt="Premium Indonesian Arabica coffee beans"
                 loading="lazy"
                 decoding="async"
@@ -37,7 +37,7 @@ const About = () => {
               </div>
               <div className="rounded-3xl overflow-hidden shadow-lg h-1/2">
                 <img
-                  src="/images/about2.jpeg"
+                  src="/images/about2.webp"
                   alt="Indonesian coffee farmers and origin partners"
                   loading="lazy"
                   decoding="async"
@@ -142,7 +142,7 @@ const About = () => {
 
           <div className="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl relative h-64 md:h-80 w-full group">
             <img
-              src="/images/about3.jpeg"
+              src="/images/about3.webp"
               alt="Green coffee processing and quality control"
               loading="lazy"
               decoding="async"
