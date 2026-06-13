@@ -9,8 +9,16 @@ import FAQ from "./sections/FAQ";
 import Footer from "./sections/Footer";
 import FloatingAction from "./components/FloatingAction";
 import SmoothAnimations from "./components/SmoothAnimations";
+import NotFound from "./sections/NotFound";
 
 function App() {
+  const pathname = window.location.pathname;
+  const isKnownPath = pathname === "/" || pathname === "/index.html";
+
+  if (!isKnownPath) {
+    return <NotFound />;
+  }
+
   return (
     <div className="bg-nawasena-bg min-h-screen font-sans">
       <SmoothAnimations />
