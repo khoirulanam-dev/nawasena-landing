@@ -148,6 +148,8 @@ const Products = () => {
                 <img
                   src={category.img}
                   alt={category.name}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   onError={(e) => {
                     e.target.src =
@@ -227,6 +229,8 @@ const Products = () => {
                       <img
                         src={product.img}
                         alt={product.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         onError={(e) => {
                           e.target.src =

@@ -6,17 +6,17 @@ const Services = () => {
     {
       title: "EXW (Ex Works)",
       desc: "Responsibility shifts from seller to buyer at our warehouse. Buyer handles all transport & export processes from there.",
-      img: "/images/farmer-exwork.jpg", // Panggil dari folder public/images
+      img: "/images/farmer-exwork.webp", // Panggil dari folder public/images
     },
     {
       title: "FOB (Free On Board)",
       desc: "Seller delivers goods to a vessel at the designated port. Buyer takes responsibility once the goods are on board.",
-      img: "/images/port.jpg", // Panggil dari folder public/images
+      img: "/images/port.webp", // Panggil dari folder public/images
     },
     {
       title: "CIF (Cost, Insurance & Freight)",
       desc: "Seller covers cost, insurance, and freight to the destination port. Risk transfers to buyer on board the vessel.",
-      img: "/images/cif.png", // Panggil dari folder public/images
+      img: "/images/cif.webp", // Panggil dari folder public/images
     },
   ];
 
@@ -52,6 +52,8 @@ const Services = () => {
                 <img
                   src={item.img}
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover"
                 />
               </div>

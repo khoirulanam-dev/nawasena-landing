@@ -4,7 +4,14 @@ import { FaBars, FaTimes } from "react-icons/fa"; // Import icon garis 3 dan sil
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false); // State untuk menu HP
-  const links = ["Home", "About", "Services", "Products", "Contact"];
+  const links = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Products", href: "#products" },
+    { label: "Request Sample", href: "#request-sample" },
+    { label: "Contact", href: "#contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,14 +38,14 @@ const Navbar = () => {
         </div>
 
         {/* Menu Links (Desktop) */}
-        <ul className="hidden md:flex space-x-10">
+        <ul className="hidden md:flex gap-7 lg:gap-10">
           {links.map((link) => (
-            <li key={link}>
+            <li key={link.href}>
               <a
-                href={`#${link.toLowerCase()}`}
+                href={link.href}
                 className="text-nawasena-dark font-medium text-[15px] transition-colors duration-300 hover:text-nawasena-light"
               >
-                {link}
+                {link.label}
               </a>
             </li>
           ))}
@@ -61,14 +68,14 @@ const Navbar = () => {
       >
         <ul className="flex flex-col space-y-8 text-center">
           {links.map((link) => (
-            <li key={link}>
+            <li key={link.href}>
               <a
-                href={`#${link.toLowerCase()}`}
+                href={link.href}
                 onClick={() => setIsOpen(false)} // Tutup menu setelah di-klik
                 className="text-3xl text-nawasena-dark font-bold hover:text-nawasena-light transition-colors"
                 style={{ fontFamily: "'Playfair Display', serif" }}
               >
-                {link}
+                {link.label}
               </a>
             </li>
           ))}

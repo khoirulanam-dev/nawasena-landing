@@ -15,7 +15,9 @@ const About = () => {
             <div className="rounded-3xl overflow-hidden shadow-lg h-full">
               <img
                 src="/images/about1.jpeg.jpeg"
-                alt="Coffee"
+                alt="Premium Indonesian Arabica coffee beans"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
@@ -36,7 +38,9 @@ const About = () => {
               <div className="rounded-3xl overflow-hidden shadow-lg h-1/2">
                 <img
                   src="/images/about2.jpeg"
-                  alt="Farmers"
+                  alt="Indonesian coffee farmers and origin partners"
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -139,7 +143,9 @@ const About = () => {
           <div className="order-1 lg:order-2 rounded-3xl overflow-hidden shadow-xl relative h-64 md:h-80 w-full group">
             <img
               src="/images/about3.jpeg"
-              alt="Processing"
+              alt="Green coffee processing and quality control"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover"
             />
           </div>

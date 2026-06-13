@@ -1,13 +1,23 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectFade } from "swiper/modules";
+import CoffeeScene3D from "../components/CoffeeScene3D";
 
 import "swiper/css";
 import "swiper/css/effect-fade";
 
 const Hero = () => {
   // Ganti link URL dengan path gambar lokal di folder public/images
-  const images = ["/images/hero-1.jpeg", "/images/hero2.jpeg"];
+  const images = [
+    {
+      src: "/images/hero-1.jpeg",
+      alt: "Indonesian Arabica coffee beans from Nawasena origin partners",
+    },
+    {
+      src: "/images/hero2.jpeg",
+      alt: "Premium green coffee beans for export",
+    },
+  ];
 
   return (
     <section id="home" className="h-screen w-full relative">
@@ -18,12 +28,17 @@ const Hero = () => {
         loop={true}
         className="h-full w-full"
       >
-        {images.map((img, index) => (
+        {images.map((image, index) => (
           <SwiperSlide key={index}>
-            <div
-              className="h-full w-full bg-cover bg-center relative"
-              style={{ backgroundImage: `url(${img})` }}
-            >
+            <div className="h-full w-full relative overflow-hidden">
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "auto"}
+                decoding={index === 0 ? "sync" : "async"}
+                className="h-full w-full object-cover"
+              />
               {/* Overlay gelap 60% agar teks terbaca jelas di semua device */}
               <div className="absolute inset-0 bg-black/60"></div>
             </div>
@@ -44,7 +59,7 @@ const Hero = () => {
           className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-8 md:mb-10 drop-shadow-xl max-w-3xl leading-[1.2] md:leading-tight"
           style={{ fontFamily: "'Playfair Display', serif" }}
         >
-          The Farm of Coffee Beans Products
+          Indonesian Arabica Green Coffee Beans Exporter
         </h1>
 
         <a
@@ -55,6 +70,8 @@ const Hero = () => {
           Explore More
         </a>
       </div>
+
+      <CoffeeScene3D />
     </section>
   );
 };

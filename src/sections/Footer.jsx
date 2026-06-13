@@ -52,18 +52,21 @@ const Footer = () => {
             <div className="flex gap-4 mt-8">
               <a
                 href="https://www.linkedin.com/company/nawasena-international-group"
+                aria-label="Visit Nawasena International Group on LinkedIn"
                 className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center hover:bg-[#b87333] hover:border-[#b87333] transition-colors"
               >
                 <FaLinkedinIn />
               </a>
               <a
                 href="https://wa.me/6281779356312"
+                aria-label="Contact Nawasena International Group on WhatsApp"
                 className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center hover:bg-[#b87333] hover:border-[#b87333] transition-colors"
               >
                 <FaWhatsapp />
               </a>
               <a
                 href="https://www.instagram.com/nawasenaint/"
+                aria-label="Visit Nawasena International Group on Instagram"
                 className="w-10 h-10 rounded-full border border-gray-500 flex items-center justify-center hover:bg-[#b87333] hover:border-[#b87333] transition-colors"
               >
                 <FaInstagram />
@@ -126,6 +129,7 @@ const Footer = () => {
             <div className="w-full h-48 rounded-lg overflow-hidden border border-gray-600 shadow-lg bg-gray-200">
               {/* Embed Google Maps Ijen/Bondowoso (Anda bisa mengganti src dengan embed link kantor asli) */}
               <iframe
+                title="PT. Nawasena International Group location map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3949.123848973126!2d113.70602817582982!3d-8.1915929314013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd696a5d35a58e3%3A0xe32dd78913e86c0e!2sKebonsari%20Residence!5e0!3m2!1sid!2sid!4v1776503824512!5m2!1sid!2sid"
                 width="100%"
                 height="100%"
