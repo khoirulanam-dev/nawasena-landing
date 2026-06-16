@@ -7,14 +7,16 @@ export function generateStaticParams() {
   return processingMethods.map((method) => ({ slug: method.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const method = getProcessing(params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const method = getProcessing(slug);
   if (!method) return {};
   return { title: `${method.name} Processing`, description: method.summary };
 }
 
-export default function ProcessingDetailPage({ params }) {
-  const method = getProcessing(params.slug);
+export default async function ProcessingDetailPage({ params }) {
+  const { slug } = await params;
+  const method = getProcessing(slug);
   if (!method) notFound();
   const related = products.filter((product) => product.processSlug === method.slug || product.process === method.name);
 

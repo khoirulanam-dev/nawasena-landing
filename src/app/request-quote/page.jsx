@@ -9,7 +9,7 @@ export const metadata = {
 export default function RequestQuotePage() {
   return (
     <main>
-      <PageHero eyebrow="Request a Quote" title="Request current availability and quotation" description="Tell us your target origin, process, grade, volume, destination, and timeline. Nawasena will confirm current availability and next steps." image="/images/full-wash.webp" />
+      <PageHero eyebrow="Discuss Your Requirements" title="Request current Java Ijen availability and quotation" description="Share your required origin, post-harvest process, quality specification, quantity, destination, and purchasing schedule. Our team will confirm availability and commercial next steps." image="/images/full-wash.webp" />
       <section className="py-16">
         <div className="section-shell max-w-4xl">
           <InquiryForm type="quote" />

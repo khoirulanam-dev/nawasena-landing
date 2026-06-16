@@ -6,16 +6,8 @@ import clsx from "clsx";
 
 const navItems = [
   { label: "Dashboard", href: "/admin", section: "Overview" },
-  { label: "Articles", href: "/admin/articles", section: "Content" },
-  { label: "Products", href: "/admin/products", section: "Content" },
-  { label: "Origins", href: "/admin/origins", section: "Content" },
-  { label: "Supply", href: "/admin/supply", section: "Operations" },
-  { label: "Media", href: "/admin/media", section: "Operations" },
-  { label: "Inquiries", href: "/admin/inquiries", section: "Operations" },
-  { label: "Redirects", href: "/admin/redirects", section: "System" },
-  { label: "Settings", href: "/admin/settings", section: "System" },
-  { label: "Users", href: "/admin/users", section: "System" },
-  { label: "Audit Logs", href: "/admin/audit-logs", section: "System" },
+  { label: "Buyer Inquiries", href: "/admin/inquiries", section: "Operations" },
+  { label: "Public Articles", href: "/admin/articles", section: "Content" },
 ];
 
 export function AdminShell({ children }) {
@@ -104,10 +96,10 @@ export function AdminShell({ children }) {
             </div>
             <div className="flex flex-wrap items-center gap-3">
               <span className="rounded-full border border-[#d9c9b7] bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.12em] text-[#3e2723] shadow-sm">
-                Production-ready auth
+                Protected Admin
               </span>
-              <Link href="/request-quote" className="rounded-sm bg-[#2e7d32] px-4 py-2 text-sm font-bold text-white hover:bg-[#245d28]">
-                Public Form
+              <Link href="/sample-request" className="rounded-sm bg-[#2e7d32] px-4 py-2 text-sm font-bold text-white hover:bg-[#245d28]">
+                Sample Form
               </Link>
             </div>
           </div>

@@ -1,154 +1,129 @@
 import Link from "next/link";
+import { desc } from "drizzle-orm";
 import { AdminPanel, AdminRows, AdminStatCard, AdminStatus } from "@/components/site/AdminUi";
-import { articles, origins, products, supplyRecords } from "@/data/site";
+import { getAdminArticles } from "@/lib/articles";
+import { getDb } from "@/lib/db/client";
+import { inquiries } from "@/lib/db/schema";
 
-const modules = [
-  {
-    label: "Articles",
-    href: "/admin/articles",
-    description: "Draft, review, schedule, and publish buyer-focused insights.",
-    count: articles.length,
-  },
-  {
-    label: "Products",
-    href: "/admin/products",
-    description: "Manage coffee names, origin links, process, specs, images, and availability.",
-    count: products.length,
-  },
-  {
-    label: "Origins",
-    href: "/admin/origins",
-    description: "Maintain Java Ijen, Aceh Gayo, and future sourcing regions.",
-    count: origins.length,
-  },
-  {
-    label: "Supply",
-    href: "/admin/supply",
-    description: "Publish crop-cycle supply records with verification dates.",
-    count: supplyRecords.length,
-  },
-  {
-    label: "Inquiries",
-    href: "/admin/inquiries",
-    description: "Review quote and sample requests from B2B buyers.",
-    count: "DB",
-  },
-  {
-    label: "Redirects",
-    href: "/admin/redirects",
-    description: "Protect SEO when old URLs change.",
-    count: "301",
-  },
-];
+async function getInquirySummary() {
+  const db = getDb();
 
-export default function AdminPage() {
+  if (!db) {
+    return { rows: [], counts: {}, error: "DATABASE_URL is not configured." };
+  }
+
+  try {
+    const rows = await db.select().from(inquiries).orderBy(desc(inquiries.createdAt)).limit(5);
+    const counts = rows.reduce((current, inquiry) => {
+      current[inquiry.status] = (current[inquiry.status] || 0) + 1;
+      return current;
+    }, {});
+
+    return { rows, counts, error: "" };
+  } catch {
+    return {
+      rows: [],
+      counts: {},
+      error: "Inquiry table is not ready. Run npm run db:migrate, then submit a test inquiry.",
+    };
+  }
+}
+
+export default async function AdminPage() {
+  const inquirySummary = await getInquirySummary();
+  const articles = await getAdminArticles();
+  const newInquiries = inquirySummary.counts.new || 0;
+  const publishedArticles = articles.filter((article) => article.status === "published");
+  const draftArticles = articles.filter((article) => article.status === "draft");
+
   return (
-    <div>
-      <section className="relative mb-8 overflow-hidden rounded-sm border border-[#4c2f27] bg-[#2a1712] p-7 text-white shadow-2xl shadow-[#3e2723]/20 md:p-9">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_10%,rgba(244,211,170,0.18),transparent_32%),radial-gradient(circle_at_85%_25%,rgba(46,125,50,0.16),transparent_28%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-[#f4d3aa]/70 to-transparent" />
-        <div className="relative grid gap-8 xl:grid-cols-[1.2fr_0.8fr] xl:items-end">
+    <div className="grid gap-7">
+      <section className="rounded-sm border border-[#e1d4c3] bg-white p-6 shadow-lg shadow-[#3e2723]/5">
+        <div className="grid gap-5 lg:grid-cols-[1fr_auto] lg:items-end">
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.24em] text-[#f4d3aa]">Executive Dashboard</p>
-            <h1 className="font-display mt-4 max-w-4xl text-5xl font-bold leading-tight md:text-7xl">
-              Corporate coffee CMS
+            <p className="text-xs font-bold uppercase tracking-[0.18em] text-[#2e7d32]">Admin dashboard</p>
+            <h1 className="font-display mt-2 text-4xl font-bold leading-tight text-[#3e2723] md:text-5xl">
+              Manage buyer requests and public content.
             </h1>
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-white/72">
-              A private command center for product intelligence, harvest availability, buyer inquiries, editorial authority, and SEO-controlled migration.
+            <p className="mt-3 max-w-3xl text-sm leading-7 text-stone-600">
+              This workspace only shows modules that currently have a usable purpose. Buyer inquiries are stored in Neon, and database-backed articles can now be created, edited, drafted, published, and deleted.
             </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link href="/admin/articles/new" className="rounded-sm bg-[#f4d3aa] px-5 py-3 text-sm font-bold text-[#251511] shadow-lg shadow-black/20 hover:bg-[#ffdcae]">
-                Create Article
-              </Link>
-              <Link href="/admin/inquiries" className="rounded-sm border border-white/15 bg-white/10 px-5 py-3 text-sm font-bold text-white hover:bg-white/15">
-                Review Inquiries
-              </Link>
-              <Link href="/admin/supply" className="rounded-sm border border-white/15 bg-white/10 px-5 py-3 text-sm font-bold text-white hover:bg-white/15">
-                Verify Supply
-              </Link>
-            </div>
           </div>
-          <div className="grid gap-3 sm:grid-cols-3 xl:grid-cols-1">
-            <div className="rounded-sm border border-white/10 bg-white/10 p-4 backdrop-blur">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#f4d3aa]">Auth</p>
-              <p className="mt-2 font-display text-2xl font-bold">Email + Password</p>
-            </div>
-            <div className="rounded-sm border border-white/10 bg-white/10 p-4 backdrop-blur">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#f4d3aa]">Database</p>
-              <p className="mt-2 font-display text-2xl font-bold">Neon PostgreSQL</p>
-            </div>
-            <div className="rounded-sm border border-white/10 bg-white/10 p-4 backdrop-blur">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#f4d3aa]">Visibility</p>
-              <p className="mt-2 font-display text-2xl font-bold">Noindex Admin</p>
-            </div>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/admin/inquiries" className="rounded-sm bg-[#2e7d32] px-5 py-3 text-sm font-bold text-white hover:bg-[#245d28]">
+              Open Inquiries
+            </Link>
+            <Link href="/news" className="rounded-sm border border-[#d7c7b4] bg-[#fffaf1] px-5 py-3 text-sm font-bold text-[#3e2723] hover:bg-white">
+              View Articles
+            </Link>
+            <Link href="/admin/articles/new" className="rounded-sm border border-[#d7c7b4] bg-[#fffaf1] px-5 py-3 text-sm font-bold text-[#3e2723] hover:bg-white">
+              New Article
+            </Link>
           </div>
         </div>
       </section>
 
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-        <AdminStatCard label="Published articles" value={articles.length} detail="Initial SEO content cluster" tone="green" />
-        <AdminStatCard label="Products" value={products.length} detail="Java Ijen and Aceh Gayo variants" />
-        <AdminStatCard label="Origins" value={origins.length} detail="Primary Indonesian sourcing areas" />
-        <AdminStatCard label="Supply status" value="Pending" detail="No unverified MT claim is public" />
+      <div className="grid gap-4 md:grid-cols-4">
+        <AdminStatCard label="New inquiries" value={newInquiries} detail="Needs first response" tone={newInquiries > 0 ? "amber" : "green"} />
+        <AdminStatCard label="Recent inquiries" value={inquirySummary.rows.length} detail="Latest records loaded from Neon" />
+        <AdminStatCard label="Published articles" value={publishedArticles.length} detail="Visible on /news" tone="green" />
+        <AdminStatCard label="Draft articles" value={draftArticles.length} detail="Private until published" tone={draftArticles.length > 0 ? "amber" : "default"} />
       </div>
 
-      <div className="mt-8 grid gap-6 xl:grid-cols-[1.25fr_0.75fr]">
-        <AdminPanel title="CMS Modules" description="Manage operational sections from one workspace.">
-          <div className="grid gap-4 md:grid-cols-2">
-            {modules.map((module, index) => (
-              <Link
-                key={module.href}
-                href={module.href}
-                className="group relative overflow-hidden rounded-sm border border-[#eadfce] bg-[#fffaf1] p-5 transition hover:border-[#2e7d32] hover:bg-white hover:shadow-lg hover:shadow-[#3e2723]/10"
-              >
-                <div className="absolute right-4 top-4 font-display text-6xl font-bold text-[#3e2723]/5">{String(index + 1).padStart(2, "0")}</div>
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h2 className="font-display text-2xl font-bold text-[#3e2723] group-hover:text-[#2e7d32]">{module.label}</h2>
-                    <p className="mt-2 text-sm leading-6 text-stone-600">{module.description}</p>
-                  </div>
-                  <span className="rounded-full bg-[#3e2723] px-3 py-1 text-xs font-bold text-[#f4d3aa]">{module.count}</span>
+      {inquirySummary.error && (
+        <AdminPanel title="Database attention needed">
+          <div className="rounded-sm border border-amber-200 bg-amber-50 p-4 text-sm font-semibold leading-7 text-amber-800">
+            {inquirySummary.error}
+          </div>
+        </AdminPanel>
+      )}
+
+      <div className="grid gap-6 xl:grid-cols-[1fr_0.8fr]">
+        <AdminPanel title="Latest buyer inquiries" description="Review new sample and quote requests from the public forms.">
+          {inquirySummary.rows.length > 0 ? (
+            <AdminRows
+              rows={inquirySummary.rows.map((inquiry) => ({
+                title: `${inquiry.name} - ${inquiry.country}`,
+                description: `${inquiry.inquiryType.toUpperCase()} request for ${inquiry.product || "unspecified product"}${inquiry.volume ? `, ${inquiry.volume}` : ""}.`,
+                status: inquiry.status,
+                tone: inquiry.status === "new" ? "amber" : "green",
+                meta: new Intl.DateTimeFormat("en", { dateStyle: "medium" }).format(inquiry.createdAt),
+              }))}
+            />
+          ) : (
+            <EmptyState title="No inquiries yet" description="Submit the sample or quote form once to confirm database persistence." />
+          )}
+          <div className="mt-5 flex justify-end">
+            <Link href="/admin/inquiries" className="text-sm font-bold text-[#2e7d32] hover:text-[#245d28]">
+              Manage inquiries
+            </Link>
+          </div>
+        </AdminPanel>
+
+        <AdminPanel title="Recent articles" description="Database articles are editable. Static seed articles are retained as fallback content.">
+          <div className="grid gap-3">
+            {articles.slice(0, 5).map((article) => (
+              <Link key={article.slug} href={`/news/${article.slug}`} className="rounded-sm border border-[#eadfce] bg-white p-4 hover:border-[#2e7d32]">
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="font-bold text-[#3e2723]">{article.title}</h3>
+                  <AdminStatus tone={article.status === "published" ? "green" : "amber"}>{article.status}</AdminStatus>
+                  <AdminStatus tone={article.source === "database" ? "green" : "neutral"}>{article.source}</AdminStatus>
                 </div>
+                <p className="mt-2 text-sm leading-6 text-stone-500">{article.excerpt}</p>
               </Link>
             ))}
           </div>
         </AdminPanel>
-
-        <div className="grid gap-6">
-          <AdminPanel title="Production Readiness" description="Current admin foundation status.">
-            <div className="grid gap-3">
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-sm font-semibold text-stone-600">Authentication</span>
-                <AdminStatus tone="green">Email Password</AdminStatus>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-sm font-semibold text-stone-600">Admin indexing</span>
-                <AdminStatus tone="green">Noindex</AdminStatus>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-sm font-semibold text-stone-600">Database</span>
-                <AdminStatus tone="green">Neon Ready</AdminStatus>
-              </div>
-              <div className="flex items-center justify-between gap-4">
-                <span className="text-sm font-semibold text-stone-600">Harvest capacity</span>
-                <AdminStatus tone="amber">Needs Verification</AdminStatus>
-              </div>
-            </div>
-          </AdminPanel>
-
-          <AdminPanel title="Recent Editorial Items">
-            <AdminRows
-              rows={articles.slice(0, 3).map((article) => ({
-                title: article.title,
-                description: article.excerpt,
-                status: "Published",
-                tone: "green",
-                meta: article.updatedAt,
-              }))}
-            />
-          </AdminPanel>
-        </div>
       </div>
+    </div>
+  );
+}
+
+function EmptyState({ title, description }) {
+  return (
+    <div className="rounded-sm border border-dashed border-[#d7c7b4] bg-[#fffaf1] p-8 text-center">
+      <p className="font-display text-2xl font-bold text-[#3e2723]">{title}</p>
+      <p className="mt-2 text-sm leading-6 text-stone-500">{description}</p>
     </div>
   );
 }

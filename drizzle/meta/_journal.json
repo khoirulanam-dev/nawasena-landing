@@ -15,6 +15,20 @@
       "when": 1781500884883,
       "tag": "0001_mighty_slayback",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1781573200000,
+      "tag": "0002_article_media",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1781576400000,
+      "tag": "0003_phase2_hardening",
+      "breakpoints": true
     }
   ]
 }

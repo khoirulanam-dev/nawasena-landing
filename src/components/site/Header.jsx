@@ -21,10 +21,10 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="/request-quote"
+            href="/sample-request"
             className="focus-ring rounded-sm bg-[#2e7d32] px-4 py-2 text-sm font-bold text-white hover:bg-[#245d28]"
           >
-            Request a Quote
+            Request Samples
           </Link>
         </nav>
 
@@ -48,11 +48,11 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="/request-quote"
+              href="/sample-request"
               className="focus-ring inline-flex justify-center rounded-sm bg-[#2e7d32] px-5 py-3 font-bold text-white"
               onClick={() => setOpen(false)}
             >
-              Request a Quote
+              Request Samples
             </Link>
           </div>
         </nav>

@@ -1,45 +1,43 @@
-import { AdminPageHeader, AdminPanel, AdminStatus } from "@/components/site/AdminUi";
+import { notFound } from "next/navigation";
+import { AdminArticleForm } from "@/components/site/AdminArticleForm";
+import { AdminPageHeader, AdminPanel } from "@/components/site/AdminUi";
+import { deleteArticle, updateArticle } from "@/app/admin/articles/actions";
+import { getEditableArticle } from "@/lib/articles";
+import { getMediaLibrary } from "@/lib/media";
 
-export default async function AdminArticleEditPage({ params }) {
+export default async function AdminEditArticlePage({ params }) {
   const { id } = await params;
+  const [article, mediaItems] = await Promise.all([getEditableArticle(id), getMediaLibrary()]);
+
+  if (!article) {
+    notFound();
+  }
 
   return (
     <div>
       <AdminPageHeader
-        eyebrow="Editorial Workflow"
-        title={`Edit Article ${id}`}
-        description="Review content fields, SEO metadata, status, references, and related entities before publishing."
+        eyebrow="Editorial"
+        title="Edit Article"
+        description="Update the article content, SEO fields, featured image, and publication status."
       />
 
-      <div className="grid gap-6 xl:grid-cols-[1fr_360px]">
-        <AdminPanel title="Article Details" description="This production UI shell is ready for database-backed article editing.">
-          <div className="grid gap-4">
-            <div className="rounded-sm border border-[#eadfce] bg-[#fffaf1] p-5">
-              <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#2e7d32]">Content</p>
-              <h2 className="font-display mt-2 text-3xl font-bold text-[#3e2723]">Article editor pending database record</h2>
-              <p className="mt-3 text-sm leading-7 text-stone-600">When an article record exists in Neon, this page can load title, slug, body, SEO fields, featured image, references, and relation fields.</p>
-            </div>
-          </div>
-        </AdminPanel>
+      <div className="grid gap-6">
+        <AdminArticleForm article={article} action={updateArticle} submitLabel="Save changes" mediaItems={mediaItems} />
 
-        <AdminPanel title="Publication Controls">
-          <div className="grid gap-4 text-sm">
-            <Control label="Status" value="Draft" tone="amber" />
-            <Control label="Review" value="Required" tone="amber" />
-            <Control label="Public visibility" value="Blocked until published" tone="green" />
-            <Control label="Audit log" value="Prepared" tone="green" />
-          </div>
+        <AdminPanel title="Danger zone" description="Deleting an article removes it from the database and public News pages. Static seed articles cannot be deleted here.">
+          <form action={deleteArticle} className="flex flex-wrap items-center justify-between gap-4">
+            <div>
+              <p className="font-bold text-[#3e2723]">Delete this article</p>
+              <p className="mt-1 text-sm leading-6 text-stone-500">This action cannot be undone from the dashboard.</p>
+            </div>
+            <input type="hidden" name="id" value={article.id} />
+            <input type="hidden" name="slug" value={article.slug} />
+            <button type="submit" className="rounded-sm border border-red-200 bg-red-50 px-5 py-3 text-sm font-bold text-red-700 hover:bg-red-100">
+              Delete article
+            </button>
+          </form>
         </AdminPanel>
       </div>
-    </div>
-  );
-}
-
-function Control({ label, value, tone = "neutral" }) {
-  return (
-    <div className="flex items-center justify-between gap-4 border-b border-[#eadfce] pb-3 last:border-0 last:pb-0">
-      <span className="font-semibold text-stone-600">{label}</span>
-      <AdminStatus tone={tone}>{value}</AdminStatus>
     </div>
   );
 }

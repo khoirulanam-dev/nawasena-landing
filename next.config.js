@@ -2,6 +2,15 @@
 const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
+    remotePatterns: process.env.BLOB_PUBLIC_HOSTNAME
+      ? [
+          {
+            protocol: "https",
+            hostname: process.env.BLOB_PUBLIC_HOSTNAME,
+            pathname: "/articles/**",
+          },
+        ]
+      : [],
   },
   async redirects() {
     return [

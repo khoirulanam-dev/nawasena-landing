@@ -54,11 +54,14 @@ export const redirects = pgTable("redirects", {
 
 export const auditLogs = pgTable("audit_logs", {
   id: serial("id").primaryKey(),
+  actorAdminId: integer("actor_admin_id"),
   actor: varchar("actor", { length: 180 }).notNull(),
   action: varchar("action", { length: 120 }).notNull(),
   entityType: varchar("entity_type", { length: 80 }).notNull(),
   entityId: varchar("entity_id", { length: 120 }),
   metadata: jsonb("metadata"),
+  ip: varchar("ip", { length: 80 }),
+  userAgent: text("user_agent"),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
 });
 
@@ -79,4 +82,38 @@ export const supplyRecordsTable = pgTable("supply_records", {
   publicDisclaimer: text("public_disclaimer"),
   publicationStatus: varchar("publication_status", { length: 40 }).notNull().default("draft"),
   createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+});
+
+export const media = pgTable("media", {
+  id: serial("id").primaryKey(),
+  storageKey: varchar("storage_key", { length: 320 }).notNull(),
+  publicUrl: varchar("public_url", { length: 320 }).notNull(),
+  originalFilename: varchar("original_filename", { length: 260 }).notNull(),
+  generatedFilename: varchar("generated_filename", { length: 260 }).notNull(),
+  mimeType: varchar("mime_type", { length: 120 }).notNull(),
+  format: varchar("format", { length: 40 }).notNull(),
+  width: integer("width").notNull(),
+  height: integer("height").notNull(),
+  fileSizeBytes: integer("file_size_bytes").notNull(),
+  altText: text("alt_text").notNull(),
+  caption: text("caption"),
+  credit: text("credit"),
+  sourceUrl: text("source_url"),
+  blurDataUrl: text("blur_data_url").notNull(),
+  contentHash: varchar("content_hash", { length: 80 }).notNull(),
+  variants: jsonb("variants"),
+  createdBy: varchar("created_by", { length: 180 }),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
+});
+
+export const articleRedirects = pgTable("article_redirects", {
+  id: serial("id").primaryKey(),
+  articleRecordId: integer("article_record_id").notNull(),
+  oldPath: varchar("old_path", { length: 320 }).notNull(),
+  newPath: varchar("new_path", { length: 320 }).notNull(),
+  statusCode: integer("status_code").notNull().default(301),
+  isActive: boolean("is_active").notNull().default(true),
+  createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),
+  updatedAt: timestamp("updated_at", { withTimezone: true }).defaultNow().notNull(),
 });

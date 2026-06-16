@@ -4,7 +4,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 
 export const metadata = {
   title: "Quality Control",
-  description: "Lot-based quality control for Indonesian green coffee beans, including moisture, defect count, screen size, samples, and pre-shipment checks.",
+  description: "Quality-controlled Arabica Java Ijen green coffee with lot specifications, moisture, defect level, screen size, samples, and pre-shipment review.",
 };
 
 const qualityItems = [
@@ -21,12 +21,12 @@ const qualityItems = [
 export default function QualityPage() {
   return (
     <main>
-      <PageHero eyebrow="Quality" title="Lot-based quality control for green coffee buyers" description="Nawasena communicates quality through verified lot specifications, samples, and pre-shipment preparation rather than unsupported generic claims." image="/images/about3.webp" primaryHref="/request-quote" primaryLabel="Discuss Specifications" />
+      <PageHero eyebrow="Quality-controlled green coffee" title="Clear specifications before commercial offering" description="Each available lot is evaluated based on relevant physical and product specifications before being offered to buyers." image="/images/about3.webp" primaryHref="/request-quote" primaryLabel="Discuss Specifications" secondaryHref="/sample-request" secondaryLabel="Request Samples" />
       <section className="py-16">
         <div className="section-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <Image src="/images/about-main.webp" alt="Indonesian green coffee beans for quality review" width={960} height={1280} className="h-[620px] w-full rounded-sm object-cover" />
           <div>
-            <SectionHeading eyebrow="Quality attributes" title="Specification fields buyers should confirm" />
+            <SectionHeading eyebrow="Quality attributes" title="Specification fields shared for buyer evaluation" />
             <div className="mt-8 grid gap-4 md:grid-cols-2">
               {qualityItems.map(([title, description]) => (
                 <article key={title} className="rounded-sm border border-[#eadfce] bg-white p-5">

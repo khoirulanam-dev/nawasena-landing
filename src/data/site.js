@@ -3,7 +3,7 @@ export const site = {
   legalName: "PT. Nawasena International Group",
   domain: "https://www.nawasenaint.web.id",
   description:
-    "Indonesian green coffee sourcing and export partner specializing in Java Ijen and Aceh Gayo for global roasters, importers, distributors, and wholesale buyers.",
+    "PT. Nawasena International Group supplies traceable Arabica Java Ijen green coffee from East Java with structured quality control, transparent product information, and export-ready coordination.",
   email: "export@nawasenaint.web.id",
   whatsapp: "+62 817-7935-6312",
   whatsappNumber: "6281779356312",
@@ -15,12 +15,11 @@ export const site = {
 
 export const navigation = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "/products" },
-  { label: "Origins", href: "/origins" },
-  { label: "Quality", href: "/quality" },
-  { label: "Export Services", href: "/export-services" },
-  { label: "News", href: "/news" },
-  { label: "About", href: "/about" },
+  { label: "About Us", href: "/about" },
+  { label: "Java Ijen", href: "/origins/java-ijen" },
+  { label: "Our Products", href: "/products" },
+  { label: "Supply & Export", href: "/export-services" },
+  { label: "Insights", href: "/news" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -49,10 +48,10 @@ export const origins = [
     harvest:
       "Availability depends on crop cycle, process, grade, and prior allocation. Current offers must be verified before quotation.",
     description:
-      "Java Ijen is one of Nawasena's primary sourcing origins for Indonesian Arabica green coffee beans. The portfolio currently includes washed, semi-washed, natural, honey, and selected anaerobic lots for roasters and importers.",
-    seoTitle: "Java Ijen Green Coffee Beans | Nawasena International Group",
+      "Arabica Java Ijen is the flagship green coffee origin of PT. Nawasena International Group. Sourced from the Ijen highlands of East Java, this origin is offered through selected post-harvest processes and lot specifications, subject to crop and seasonal availability.",
+    seoTitle: "Arabica Java Ijen Green Coffee | Nawasena International Group",
     seoDescription:
-      "Explore Java Ijen Arabica green coffee beans from PT. Nawasena International Group, including washed, semi-washed, natural, honey, and anaerobic lots.",
+      "Explore traceable Arabica Java Ijen green coffee from East Java with process, lot, sample, and export availability support from Nawasena.",
   },
   {
     slug: "aceh-gayo",
@@ -69,7 +68,7 @@ export const origins = [
     harvest:
       "Availability depends on grade, process, crop condition, and current allocation. Confirm current stock before quotation.",
     description:
-      "Aceh Gayo is a key Indonesian Arabica origin in the Nawasena portfolio, available for buyers who need commercial and specialty-oriented green coffee options.",
+      "Selected Arabica green coffee from Aceh Gayo is available based on crop, lot, and seasonal availability. Buyers can contact the commercial team to confirm current specifications, available processes, minimum order quantity, and sample availability.",
     seoTitle: "Aceh Gayo Green Coffee Beans | Nawasena International Group",
     seoDescription:
       "Source Aceh Gayo Arabica green coffee beans through PT. Nawasena International Group, including full washed, semi-washed, natural, and wine process lots.",
@@ -363,71 +362,165 @@ export const products = [
 export const supplyRecords = [
   {
     cropCycle: "2026/2027",
-    harvestLabel: "Current harvest supply",
-    capacity: "Pending internal confirmation",
-    publicCapacity: null,
+    harvestLabel: "Harvest season supply capacity",
+    capacity: "Up to 200 MT",
+    publicCapacity: "Up to 200 MT",
     capacityType: "seasonal_supply",
-    origins: ["Java Ijen", "Aceh Gayo"],
+    origins: ["Java Ijen"],
     status: "By request",
-    lastVerified: "Pending confirmation",
+    lastVerified: "June 2026",
     disclaimer:
-      "Supply figures are estimates based on the current sourcing network and crop cycle. Final availability depends on origin, process, grade, lot specification, harvest conditions, and prior allocation.",
+      "Green coffee supply capacity per harvest season is subject to crop conditions, lot availability, quality specification, contract volume, delivery schedule, and packaging requirements.",
   },
 ];
 
 export const articles = [
   {
     slug: "how-to-import-green-coffee-beans-from-indonesia",
-    title: "How to Import Green Coffee Beans from Indonesia",
+    title: "How to Import Green Coffee Beans from Indonesia: A Practical Buyer Guide",
     excerpt:
-      "A buyer-oriented overview of inquiry, sample evaluation, quotation, Incoterms discussion, and shipment preparation.",
+      "A practical guide for roasters, importers, and distributors sourcing Indonesian green coffee, from origin selection and samples to quotation, Incoterms, documentation, and shipment planning.",
     category: "Buyer Guide",
-    tags: ["import", "green coffee", "buyer guide"],
+    tags: ["import", "green coffee", "buyer guide", "indonesian coffee supplier", "green coffee sourcing"],
     publishedAt: "2026-06-15",
-    updatedAt: "2026-06-15",
-    readingTime: "5 min read",
+    updatedAt: "2026-06-16",
+    readingTime: "8 min read",
     image: "/images/port.webp",
     imageAlt: "Port logistics for Indonesian green coffee export",
     content: [
-      "Start by confirming origin, process, grade, target volume, destination, and expected timeline.",
-      "Request samples before committing to a lot. Green coffee should be evaluated against the buyer's roast profile, quality target, and commercial plan.",
-      "Discuss Incoterms and documents early. Nawasena can support export communication, but final requirements depend on destination, buyer requirements, and logistics partners.",
+      "Indonesia is one of the most recognized coffee-producing countries in the world, with Arabica origins that serve both commercial roasters and specialty-focused buyers. For international buyers, however, importing green coffee beans is not only about finding an attractive origin. A reliable purchase depends on clear specifications, realistic availability, sample evaluation, documentation readiness, and shipment coordination.",
+      "This guide explains the practical steps roasters, importers, distributors, and wholesale buyers should follow when sourcing Indonesian green coffee. It is written for B2B buyers who want to evaluate coffee professionally before moving into quotation, contract, and shipment.",
+      { type: "heading", text: "1. Define the Coffee You Need Before Requesting a Quote" },
+      "A strong inquiry starts with a clear buying requirement. Instead of asking only for a general price list, buyers should define the origin, process, grade, volume, destination, target timeline, and intended use of the coffee. This helps the supplier confirm whether the right lot is available and whether the requested specifications are realistic for the current crop cycle.",
+      {
+        type: "list",
+        items: [
+          "Origin preference, such as Arabica Java Ijen or another Indonesian origin.",
+          "Post-harvest process, including full washed, semi-washed, natural, honey, or anaerobic lots where available.",
+          "Required volume, from sample evaluation to commercial supply or container inquiry.",
+          "Quality targets, including moisture, defect tolerance, screen size, grade, and cup profile expectations.",
+          "Destination country, preferred port, timeline, packaging, and preferred Incoterm.",
+        ],
+      },
+      { type: "heading", text: "2. Request Samples Before Confirming Commercial Volume" },
+      "Sample evaluation is an important step in green coffee sourcing. Even when an origin is known, each lot can vary depending on harvest period, processing method, drying condition, storage, and sorting. Buyers should evaluate samples through their own roasting, cupping, and internal quality-control process before committing to a larger purchase.",
+      "For roasters, samples help confirm whether the coffee matches the intended roast profile and product lineup. For importers and distributors, samples help assess market suitability, customer requirements, and repeat-purchase potential. A professional supplier should be able to explain what the sample represents, whether the lot is still available, and how long the allocation can reasonably be held.",
+      { type: "heading", text: "3. Review Lot Specifications, Not Only Origin Names" },
+      "Origin names are useful, but they are not enough for B2B purchasing decisions. Buyers should review lot-level specifications before quotation. Important details may include origin area, process, variety where available, altitude information, moisture, defect count, screen size, grade, harvest period, packaging, and estimated available quantity.",
+      {
+        type: "callout",
+        text: "For Indonesian green coffee, availability should always be confirmed per lot and crop cycle. Public product pages can introduce the origin, but the final commercial offer should be based on verified specifications.",
+      },
+      { type: "heading", text: "4. Choose the Right Incoterm for Your Buying Process" },
+      "Incoterms define how responsibility, cost, and risk are divided between buyer and seller. Common commercial discussions for green coffee include EXW, FOB, and CIF. The right option depends on the buyer's logistics capability, destination, import experience, and preferred level of shipment support.",
+      {
+        type: "list",
+        items: [
+          "EXW may suit buyers who already have their own logistics and export handling arrangements.",
+          "FOB is commonly used when the seller handles export clearance and loading at the agreed port of shipment.",
+          "CIF may suit buyers who want freight and insurance arranged to the destination port, subject to final commercial agreement.",
+        ],
+      },
+      { type: "heading", text: "5. Confirm Documents and Shipment Requirements Early" },
+      "Documentation requirements vary by destination country, buyer policy, shipping route, and logistics partner. Before confirming a commercial order, buyers should discuss invoice, packing list, certificate of origin, phytosanitary documentation where required, bill of lading or airway bill, insurance documents where applicable, and any destination-specific import requirements.",
+      "Clear documentation planning reduces delays and avoids confusion after the coffee has already been prepared. Buyers should also confirm packaging requirements, bag type, marking, palletization if needed, and whether any inspection or pre-shipment review is required.",
+      { type: "heading", text: "6. Work With a Supplier That Communicates Availability Clearly" },
+      "Green coffee is an agricultural product, so supply can change based on harvest conditions, quality sorting, prior allocation, and contract commitments. A good supplier should communicate availability honestly and avoid promising volumes that cannot be verified. For example, Nawasena communicates Arabica Java Ijen availability based on crop, lot, required specifications, contract volume, and delivery schedule.",
+      "For buyers evaluating Indonesian green coffee, the best sourcing process combines origin knowledge with disciplined commercial communication. Start with a clear inquiry, evaluate samples, confirm specifications, agree on Incoterms, and document each stage before shipment.",
     ],
   },
   {
     slug: "java-ijen-coffee-origin-altitude-profile",
-    title: "Java Ijen Coffee: Origin, Altitude, and Profile",
+    title: "Java Ijen Arabica Coffee: Origin, Profile, and Sourcing Notes",
     excerpt:
-      "A concise guide to Java Ijen as a sourcing origin for Indonesian Arabica green coffee.",
+      "An introduction to Arabica Java Ijen green coffee from East Java, including origin context, processing options, buyer specifications, and what importers should confirm before purchase.",
     category: "Coffee Origins",
-    tags: ["java ijen", "origin", "arabica"],
+    tags: ["java ijen", "origin", "arabica", "east java coffee", "indonesian green coffee"],
     publishedAt: "2026-06-15",
-    updatedAt: "2026-06-15",
-    readingTime: "4 min read",
+    updatedAt: "2026-06-16",
+    readingTime: "7 min read",
     image: "/images/natural-anaerob.webp",
     imageAlt: "Java Ijen Arabica green coffee beans",
     content: [
-      "Java Ijen is one of Nawasena's initial focus origins for Arabica green coffee sourcing.",
-      "Available processes include full washed, semi-washed, natural, honey, and selected anaerobic lots.",
-      "Buyers should confirm lot-specific altitude, moisture, screen size, defect count, sample availability, and current allocation before quotation.",
+      "Arabica Java Ijen is one of the most important origin focuses for PT. Nawasena International Group. Located in East Java, the Ijen highland area is associated with Indonesian Arabica production and offers a practical sourcing option for roasters, importers, distributors, and green coffee buyers who want origin identity supported by clear commercial communication.",
+      "For B2B buyers, Java Ijen should be evaluated not only by name, but by lot specification. Processing method, harvest period, moisture, defect count, screen size, grade, and available quantity can influence both cup performance and commercial suitability.",
+      { type: "heading", text: "Why Java Ijen Matters for Green Coffee Buyers" },
+      "Java has a long history in the international coffee trade, and East Java remains relevant for buyers looking for Indonesian Arabica with a recognizable origin story. Java Ijen can serve multiple market needs, from approachable commercial Arabica to selected lots for roasters that need a distinct Indonesian profile.",
+      "A buyer evaluating Java Ijen should consider how the coffee will be used. Some buyers need consistent supply for blends. Others need a specific process for single-origin roasting, private label products, or seasonal campaigns. The sourcing conversation should begin with the buyer's quality target and expected purchasing plan.",
+      { type: "heading", text: "Common Processing Options" },
+      "Java Ijen lots may be offered in several post-harvest processes depending on crop availability and producer preparation. Each process can create different expectations for green quality, roast behavior, and cup expression. Because availability changes by season and allocation, buyers should confirm the exact process and lot before quotation.",
+      {
+        type: "list",
+        items: [
+          "Full washed lots are often selected by buyers seeking a cleaner and more structured profile.",
+          "Semi-washed lots may appeal to buyers familiar with Indonesian processing styles and heavier body expectations.",
+          "Natural lots can be used for more fruit-forward profiles where available and properly prepared.",
+          "Honey or anaerobic lots may be available as selected offerings, subject to crop, process control, and quantity.",
+        ],
+      },
+      { type: "heading", text: "What Buyers Should Confirm Before Purchase" },
+      "A professional Java Ijen offer should include more than a product name. Buyers should ask for available specifications and confirm which values are measured, estimated, or still pending verification. This is especially important for buyers importing coffee into markets with strict quality expectations or internal procurement standards.",
+      {
+        type: "list",
+        items: [
+          "Origin area and traceability information available for the lot.",
+          "Harvest period and whether the lot is current crop or previous crop.",
+          "Moisture target or measured moisture range.",
+          "Defect count, grade, and sorting standard where applicable.",
+          "Screen size, packaging, sample availability, and current allocation.",
+          "Minimum order quantity, lead time, and preferred Incoterm.",
+        ],
+      },
+      { type: "heading", text: "How Nawasena Positions Java Ijen" },
+      "Nawasena positions Arabica Java Ijen as its flagship origin. The company focuses on traceable supply, clear product information, quality-control discussion, and export-ready coordination. Current supply capacity can reach up to 200 MT per harvest season, subject to crop condition, lot availability, quality requirements, contract volume, and delivery schedule.",
+      {
+        type: "callout",
+        text: "For buyers, the most reliable next step is to request a sample and current availability sheet for the specific process and volume required.",
+      },
+      "Java Ijen can be a strong origin for buyers who want Indonesian Arabica with practical commercial support. The key is to evaluate each lot carefully and build the purchase around verified specifications rather than assumptions.",
     ],
   },
   {
     slug: "green-coffee-moisture-content-explained",
     title: "Green Coffee Moisture Content Explained",
     excerpt:
-      "Why moisture targets matter for green coffee buyers, storage, shipment, and roasting consistency.",
+      "A clear explanation of why moisture content matters in green coffee purchasing, storage, shipment, roasting consistency, and supplier-buyer quality discussions.",
     category: "Quality & Grading",
-    tags: ["quality", "moisture", "grading"],
+    tags: ["quality", "moisture", "grading", "green coffee quality", "coffee specifications"],
     publishedAt: "2026-06-15",
-    updatedAt: "2026-06-15",
-    readingTime: "4 min read",
+    updatedAt: "2026-06-16",
+    readingTime: "7 min read",
     image: "/images/about3.webp",
     imageAlt: "Green coffee quality control and processing",
     content: [
-      "Moisture is one of the key quality-control attributes buyers should confirm before shipment.",
-      "Public product pages should not invent moisture values. Each offer should confirm the target or measured range per lot.",
-      "For B2B sourcing, moisture information should be reviewed together with defect count, grade, screen size, packaging, and sample evaluation.",
+      "Moisture content is one of the most important quality-control indicators in green coffee. For roasters, importers, and distributors, moisture affects storage stability, shipment risk, roasting behavior, and the overall reliability of a purchased lot. It should be reviewed before sample approval, quotation confirmation, and shipment preparation.",
+      "In B2B green coffee sourcing, moisture should not be treated as a decorative specification. It is a practical measurement that helps buyers understand whether the coffee is prepared, stored, and shipped in a condition suitable for commercial use.",
+      { type: "heading", text: "Why Moisture Content Matters" },
+      "Green coffee is hygroscopic, meaning it can absorb or lose moisture depending on its environment. If moisture is too high, buyers may face higher risk during storage and transport. If it is too low, the coffee may become brittle, age faster, or behave differently during roasting. The ideal target can vary by buyer requirement, origin, processing method, and shipment plan.",
+      "For this reason, buyers should always ask whether the moisture value is measured per lot, estimated from supplier records, or pending final verification. The value should be considered together with other quality indicators rather than viewed in isolation.",
+      { type: "heading", text: "Moisture and Shipment Risk" },
+      "International shipment exposes green coffee to time, temperature changes, humidity, container conditions, and handling variables. Proper moisture control helps reduce the risk of quality loss before the coffee reaches the buyer. Packaging, warehouse condition, loading process, and container planning also play important roles.",
+      {
+        type: "list",
+        items: [
+          "Ask when and how the moisture was measured.",
+          "Confirm whether the value represents the offered lot or only a general origin target.",
+          "Review packaging and storage conditions before shipment.",
+          "Discuss inspection, sampling, or pre-shipment verification when needed.",
+        ],
+      },
+      { type: "heading", text: "Moisture and Roasting Consistency" },
+      "Roasters often notice that green coffee moisture can influence roast development, heat transfer, and consistency between batches. A coffee that looks similar on paper may behave differently if moisture, density, screen size, and processing method vary significantly. This is why sample roasting and production roasting should be connected to lot specifications.",
+      "For commercial buyers, consistent moisture information supports repeatability. It helps procurement teams compare lots, manage storage expectations, and communicate more clearly with roasting teams or downstream customers.",
+      { type: "heading", text: "Moisture Should Be Reviewed With Other Specifications" },
+      "Moisture alone does not define coffee quality. Buyers should review it alongside defect count, grade, screen size, processing method, cup evaluation, harvest period, packaging, and traceability information. A complete review gives a more realistic picture of whether the coffee fits the buyer's needs.",
+      {
+        type: "callout",
+        text: "Nawasena avoids publishing invented moisture values on public product pages. Final moisture information should be confirmed per available lot before quotation or shipment.",
+      },
+      { type: "heading", text: "What Buyers Should Ask Suppliers" },
+      "Before confirming an order, buyers should ask for the lot specification, sample availability, measurement status, shipment timeline, and any quality-control documentation available. If the coffee will be shipped internationally, these details should be discussed early so the commercial agreement reflects the buyer's quality expectations.",
+      "A transparent moisture discussion helps both buyer and supplier work from the same quality standard. It also reduces misunderstanding during sample approval, contract negotiation, and shipment preparation.",
     ],
   },
 ];
@@ -441,7 +534,7 @@ export const faqs = [
   {
     question: "Which coffee origins are available?",
     answer:
-      "Nawasena currently focuses on Java Ijen and Aceh Gayo for Indonesian Arabica green coffee beans.",
+      "Arabica Java Ijen from East Java is Nawasena's flagship origin. Selected Aceh Gayo Arabica may also be available based on crop, lot, and seasonal availability.",
   },
   {
     question: "What types of buyers do you serve?",
@@ -461,7 +554,7 @@ export const faqs = [
   {
     question: "How can I get pricing and product specifications?",
     answer:
-      "Submit a quotation or sample request with product, origin, target volume, destination, and timeline. Our team will confirm current availability and lot-level specifications.",
+      "Submit a quotation or sample request with required origin, process, quantity, destination, and purchasing schedule. Our team will confirm current availability, lot-level specifications, and commercial next steps.",
   },
 ];
 

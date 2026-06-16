@@ -1,0 +1,22 @@
+CREATE TABLE IF NOT EXISTS "media" (
+	"id" serial PRIMARY KEY NOT NULL,
+	"storage_key" varchar(320) NOT NULL,
+	"public_url" varchar(320) NOT NULL,
+	"original_filename" varchar(260) NOT NULL,
+	"generated_filename" varchar(260) NOT NULL,
+	"mime_type" varchar(120) NOT NULL,
+	"format" varchar(40) NOT NULL,
+	"width" integer NOT NULL,
+	"height" integer NOT NULL,
+	"file_size_bytes" integer NOT NULL,
+	"alt_text" text NOT NULL,
+	"caption" text,
+	"credit" text,
+	"source_url" text,
+	"blur_data_url" text NOT NULL,
+	"content_hash" varchar(80) NOT NULL,
+	"variants" jsonb,
+	"created_by" varchar(180),
+	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
+	"updated_at" timestamp with time zone DEFAULT now() NOT NULL
+);

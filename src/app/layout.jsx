@@ -6,7 +6,7 @@ import { site } from "@/data/site";
 export const metadata = {
   metadataBase: new URL(site.domain),
   title: {
-    default: "Indonesian Green Coffee Beans Exporter | PT. Nawasena International Group",
+    default: "Indonesian Green Coffee Supplier | Java Ijen Arabica | Nawasena",
     template: "%s | PT. Nawasena International Group",
   },
   description: site.description,
@@ -19,14 +19,14 @@ export const metadata = {
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: "Indonesian Green Coffee Beans Exporter",
+    title: "Indonesian Green Coffee Supplier | Java Ijen Arabica",
     description: site.description,
     url: site.domain,
     images: ["/images/hero-1.webp"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Indonesian Green Coffee Beans Exporter",
+    title: "Indonesian Green Coffee Supplier | Java Ijen Arabica",
     description: site.description,
     images: ["/images/hero-1.webp"],
   },

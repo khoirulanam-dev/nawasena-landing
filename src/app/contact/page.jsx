@@ -4,13 +4,13 @@ import { site } from "@/data/site";
 
 export const metadata = {
   title: "Contact",
-  description: "Contact PT. Nawasena International Group for Indonesian green coffee inquiries, samples, quotations, and export discussions.",
+  description: "Contact PT. Nawasena International Group to discuss Arabica Java Ijen samples, specifications, supply availability, and export coordination.",
 };
 
 export default function ContactPage() {
   return (
     <main>
-      <PageHero eyebrow="Contact" title="Discuss Indonesian green coffee availability" description="Share your origin, process, volume, destination, and sample requirements so the team can respond with relevant next steps." image="/images/hero2.webp" />
+      <PageHero eyebrow="Contact" title="Discuss Arabica Java Ijen availability" description="Share your preferred process, required volume, destination, sample needs, and purchasing schedule so our team can respond with relevant specifications and next steps." image="/images/hero2.webp" />
       <section className="py-16">
         <div className="section-shell grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
           <aside className="rounded-sm bg-white p-6 shadow-sm">
